@@ -1,24 +1,25 @@
 <?php
+/* PHP class that greets guests per their citizenship. Default greeting  is "hello." */
 abstract class Greeting {
-  abstract protected function prefixName($name);
+  abstract protected function prefixName($citizenship);
 }
 
-class NameGreeting extends Greeting {
-
-  public function prefixName($name, $greeting = "", $punctuation = "!") {
-    if ($name == "Wilhelm Rontgen") {
-      $greeting = "Guten Tag, ";
-    } elseif ($name == "Hugo Drax") {
-      $greeting = "Bonjour, ";
+class GreetingName extends Greeting {
+  public function prefixName($citizenship, $name = "", $punctuation = "!") {
+    if ($citizenship == "German") {
+      $greeter = "Guten Tag, ";
+    } elseif ($citizenship == "French") {
+      $greeter = "Bonjour, ";
     } else {
-      $greeting = "Hello, ";
+      $greeter = "Hello, ";
     }
-    return "{$greeting} {$name} {$punctuation}";
+    return "{$greeter} {$name}{$punctuation}";
   }
 }
 
-$class = new NameGreeting;
-echo $class->prefixName("Wilhelm Rontgen");
+$class = new GreetingName;
+echo $class->prefixName("German", "Condrad Veidt"); // Guten Tag, Condrad Veidt!
 echo "<br>";  
-echo $class->prefixName("Jane Doe");
-?>
+echo $class->prefixName("French", "Antoine Lavoisier"); // Bonjour, Antoine Lavoisier!
+echo "<br>";  
+echo $class->prefixName("", "Giles Corey"); // Hello, Giles Corey!
