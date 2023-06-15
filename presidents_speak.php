@@ -1,5 +1,7 @@
 <?php
-/* PHP interface that extends the speak() method to classes. */
+/* PHP interface that extends the speak() method to classes. 
+Note: in a real-world application, interfaces and classes are placed in separate files.
+*/
 interface President {
   public function speak();
 }
