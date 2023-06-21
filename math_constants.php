@@ -37,3 +37,10 @@ function produce($constants) {
 $constants = [ new Pi(), new Tau(),	new EulerNumber(), new EulerConstant()];
 
 produce($constants);
+
+/* Result:
+3.14159
+6.28318
+2.71828
+0.57721
+*/
