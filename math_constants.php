@@ -34,13 +34,20 @@ class GoldenRatio implements Constant {
 	}
 }
 
+
+class SilverRatio implements Constant {
+  public function printConstant() {
+		return 2.41421;
+	}
+}
+	
 function produce($constants) {
 	foreach ($constants as $constant) {
 		echo $constant->printConstant() .PHP_EOL;
 	}
 }
 
-$constants = [ new Pi(), new Tau(), new EulerNumber(), new EulerConstant(), new GoldenRatio()];
+$constants = [ new Pi(), new Tau(), new EulerNumber(), new EulerConstant(), new GoldenRatio(), new SilverRatio()];
 
 produce($constants);
 
@@ -50,4 +57,5 @@ produce($constants);
 2.71828
 0.57721
 1.61803
+2.41421
 */
