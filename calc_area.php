@@ -1,9 +1,7 @@
 <?php
 /* Create shape objects to calculate each area. */
 interface Shape{
-
-public function calculateArea(){
-
+  public function calculateArea()
 }
 
 class Square implements Shape{}
