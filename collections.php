@@ -1,5 +1,11 @@
 <?php
 /* Use class for a library collection. */
+trait Archived {
+  public function archived(){
+    echo "The collection is archived." .PHP_EOL;
+  }
+}
+
 class Collections {
   public $author = "";
   public $volumes = 0;
@@ -16,6 +22,7 @@ $austen->message(); // The 'Jane Austen' collection has 9 volumes.
 
 // Extend the class to add edition(s).
 class Edition extends Collections {
+  use Archived;
   public $editions = "";
   public function message() {
     echo "<p>The '{$this->author}' collection has {$this->volumes} volumes and is in the {$this->editions} edition(s).</p>" .PHP_EOL;
@@ -28,3 +35,11 @@ $britannica->volumes = 26;
 $britannica->editions = "3rd";
  
 $britannica->message(); // The 'Wagnals Britannica' collection has 26 volumes and is in the 3rd edition(s).
+
+$encarta = new Edition();
+$encarta->author = "Caldicott Bohr";
+$encarta->volumes = 26;
+$encarta->editions = "5th";
+ 
+$britannica->message(); 
+
