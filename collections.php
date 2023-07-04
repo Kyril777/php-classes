@@ -1,10 +1,5 @@
 <?php
 /* Use class for a library collection. */
-trait Archived {
-  public function archived(){
-    echo "The collection is archived." .PHP_EOL;
-  }
-}
 
 class Collections {
   public $author = "";
@@ -41,5 +36,5 @@ $encarta->author = "Caldicott Bohr";
 $encarta->volumes = 26;
 $encarta->editions = "5th";
  
-$britannica->message(); 
+$encarta->message(); // The 'Caldicott Bohr' collection has 26 volumes and is in the 5th edition(s).
 
