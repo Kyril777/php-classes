@@ -21,7 +21,7 @@ class Acer extends Laptop {
 	protected static $laptopName = 'Acer';
 }
 
-class ASUS extends Laptop {
+class Asus extends Laptop {
 	protected static $laptopName = 'ASUS';
 }
 
@@ -33,6 +33,6 @@ class Samsung extends Laptop {
 echo Lenovo::getLaptopName(); // Lenovo
 echo Dell::getLaptopName(); // De;;
 echo Acer::getLaptopName(); // Acer
-echo ASUS::getLaptopName(); // ASUS
+echo Asus::getLaptopName(); // ASUS
 echo Samsung::getLaptopName(); // Samsung
 echo Lenovo::getLaptopName(); // Lenovo
