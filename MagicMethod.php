@@ -1,6 +1,6 @@
 <?php
  /* A sample __call magic method. */
-class MagicMethod {
+class MagicCall {
     function __call($name , $params){
         echo "Method name =>" . $name."\n";
         echo "Parameters provided\n";
@@ -9,6 +9,31 @@ class MagicMethod {
 }
  
 // Instantiate.
-$obj = new MagicMethod();
+$call = new MagicCall();
+$call->hello("Dirks" , "Method");
+
+/*
+Method name =>hello
+Parameters provided
+Array
+(
+    [0] => Dirks
+    [1] => Method
+)
+*/
+
+ /* A sample __get magic method. */
+class MagicGreeting {
+    function __get($name){
+        echo "Good morning, '" . $name . "'!";
+    }
+}
  
-$obj->hello("Dirks" , "Method");
+$dave = new MagicGreeting();
+$dave->Dave; // Good morning, 'Dave'!
+
+$whitney = new MagicGreeting();
+$whitney->Whitney; // Good morning, 'Whitney'!
+
+$kate = new MagicGreeting();
+$kate->Kate; // Good morning, 'Kate'!
