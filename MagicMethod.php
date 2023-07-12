@@ -1,5 +1,5 @@
 <?php
-/* A samle __toString() method to create class. */
+/* A sample __toString() method to create class. */
 class MagicClass{
     public $className;
 
@@ -28,7 +28,6 @@ class MagicCall {
     }
 }
  
-// Instantiate.
 $call = new MagicCall();
 $call->hello("Dirks", "Method");
 
@@ -40,6 +39,34 @@ Array
     [0] => Dirks
     [1] => Method
 )
+*/
+
+/* A sample __staticCall() magic method. */
+<?php
+
+class MagicCallStatic{
+	public static function __callStatic($method, $params){
+		var_dump($method, $params);
+	}
+}
+
+MagicCallStatic::sample('hello');
+MagicCallStatic::staticFunction('paramOne','paramTwo','paramThree');
+/*
+string(6) "sample"
+array(1) {
+  [0]=>
+  string(5) "hello"
+}
+string(14) "staticFunction"
+array(3) {
+  [0]=>
+  string(8) "paramOne"
+  [1]=>
+  string(8) "paramTwo"
+  [2]=>
+  string(10) "paramThree"
+}
 */
 
 
