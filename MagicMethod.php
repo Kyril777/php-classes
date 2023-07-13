@@ -89,7 +89,6 @@ $kate->Kate; // Good morning, 'Kate'!
 
 
 /* A sample __construct() method to create HTML elements. */
-
 class MagicConstruct{
 	private $attributes = [];
 
