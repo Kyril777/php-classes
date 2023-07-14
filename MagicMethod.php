@@ -1,4 +1,8 @@
 <?php
+/*
+__toString() is called when an object is passed to a function (esp echo() or print()) when its context is expected to be a string. 
+*/
+
 /* A sample __toString() method to create class. */
 class MagicClass{
     public $className;
@@ -17,6 +21,41 @@ echo $firstClass; // Abra
 
 $secondClass = new MagicClass('Cadabra');
 echo $secondClass; // Cadabra
+
+/* Another __toString() method to create a class. */
+class Student 
+{
+    protected $name;
+    protected $age;
+
+    public function getName(){
+        return $this->name;
+    }
+
+    public function getAge(){
+        return $this->age;
+    }
+
+    private function setName($name){
+        $this->name = $name;
+    }
+
+    private function setAge($age){
+        $this->age = $age;
+    }
+
+    public function __construct($name, $age) {
+        $this->setName($name);
+        $this->setAge($age);
+    }
+
+    public function __toString(){
+        return "The student ". $this->getName(). " is ". $this->getAge() . " years old.";
+    }
+}
+
+$reis = new Student('Reis', 16);
+echo $reis; // The student Reis is 16 years old.
 
 
  /* A sample __call magic method. */
