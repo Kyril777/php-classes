@@ -81,8 +81,6 @@ Array
 */
 
 /* A sample __staticCall() magic method. */
-<?php
-
 class MagicCallStatic{
 	public static function __callStatic($method, $params){
 		var_dump($method, $params);
