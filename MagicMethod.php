@@ -158,3 +158,82 @@ $div->id = 'page';
 $div->class = 'info';
 
 echo $div->html('Inside of a div.'); // <div id="page" class="info">Inside of a div.</div>
+
+
+/* Use the MagicInvoke class, to be passed as a function, in order to sort a gamers array. 
+Use __invoke() to call an object as a function. */
+class MagicInvoke{
+    private $key;
+
+    public function __construct(string $key){
+        $this->key = $key;
+    }
+
+    public function __invoke($a, $b){
+        return $a[$this->key] <=> $b[$this->key];
+    }
+}
+
+$gamers = [
+    ['id' => 1001, 'gamer' => 'Jake_Squeeze', 'points' => 25550],
+    ['id' => 1951, 'gamer' => 'Tempest006', 'points' => 13670],
+    ['id' => 1229, 'gamer' => 'SystemDebt', 'points' => 48800]
+];
+
+// Sort players alphabetically.
+usort($gamers, new MagicInvoke('gamer'));
+print_r($gamers);
+/*
+Array
+(
+    [0] => Array
+        (
+            [id] => 1001
+            [gamer] => Jake_Squeeze
+            [points] => 25550
+        )
+
+    [1] => Array
+        (
+            [id] => 1229
+            [gamer] => SystemDebt
+            [points] => 48800
+        )
+
+    [2] => Array
+        (
+            [id] => 1951
+            [gamer] => Tempest006
+            [points] => 13670
+        )
+)
+*/
+
+// Sort players by points.
+usort($gamers, new MagicInvoke('points'));
+print_r($gamers);
+/*
+Array
+(
+    [0] => Array
+        (
+            [id] => 1951
+            [gamer] => Tempest006
+            [points] => 13670
+        )
+
+    [1] => Array
+        (
+            [id] => 1001
+            [gamer] => Jake_Squeeze
+            [points] => 25550
+        )
+
+    [2] => Array
+        (
+            [id] => 1229
+            [gamer] => SystemDebt
+            [points] => 48800
+        )
+)
+*/
