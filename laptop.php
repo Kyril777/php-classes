@@ -31,7 +31,7 @@ class Samsung extends Laptop {
 
 
 echo Lenovo::getLaptopName(); // Lenovo
-echo Dell::getLaptopName(); // De;;
+echo Dell::getLaptopName(); // Dell
 echo Acer::getLaptopName(); // Acer
 echo Asus::getLaptopName(); // ASUS
 echo Samsung::getLaptopName(); // Samsung
