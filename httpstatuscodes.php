@@ -9,7 +9,7 @@ enum HttpStatusCode: int
 	case EarlyHints = 103;
 
 	// Success.
-	case OK = 200;
+	case Ok = 200;
 	case Created = 201;
 	case Accepted = 202;
 	case NonAuthoritativeInformation = 203;
@@ -78,19 +78,28 @@ enum HttpStatusCode: int
 	public function message(): string {
 		return match ($this) {
 			self::Continue => '',
-			self::SwitchingProtocols => '',
-			self::Processing => '',
-			self::EarlyHints => '',
-			self::OK => '',
-			self::Created => '',
-			self::Accepted => '',
-			self::NonAuthoritativeInformation => '',
-			self::NoContent => '',
-			self::ResetContent => '',
-			self::PartialContent => '',
-			self::MultiStatus => '',
-			self::AlreadyReported => '',
-			self::IMUsed => ''
+			self::SwitchingProtocols => 'Switching Protocols',
+			self::Processing => 'Processing',
+			self::EarlyHints => 'Early Hints',
+			self::Ok => 'Ok',
+			self::Created => 'Created',
+			self::Accepted => 'Accepted',
+			self::NonAuthoritativeInformation => 'Non-Authoritative Information',
+			self::NoContent => 'No Content',
+			self::ResetContent => 'Reset Content',
+			self::PartialContent => 'Partial Content',
+			self::MultiStatus => 'Multi-Status',
+			self::AlreadyReported => 'Already Reported',
+			self::IMUsed => 'IM Used',
+			self::MultipleChoices = 'Multiple Choices',
+			self::MovedPermanently = 'Moved Permanently',
+			self::Found = 'Found',
+			self::SeeOther = 'See Other',
+			self::NotModified = 'Not Modified',
+			self::UseProxy = 'Use Proxy',
+			self::SwitchProxy = 'Switch Proxy',
+			self::TemporaryRedirect = 'Temporary Redirect',
+			self::PermanentRedirect = 'Permanent Redirect',
 		};
 	}
 }
