@@ -146,3 +146,6 @@ enum HttpStatusCode: int
 
 $badrequest = HttpStatusCode::BadRequest;
 print $badrequest->message(); // Bad Request
+
+$ok = HttpStatusCode::Ok->value;
+print $ok; // 200
