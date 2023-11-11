@@ -21,9 +21,9 @@ class StringModifier {
 }
 
 $obj = new CapitalizeOnly();
-$obj->capitalize("records");  // RECORDS
+$obj->capitalize("records");  // Output: RECORDS
 // $obj2->lowercase("POMEGRANATE"); // Warning: Undefined variable $obj2 in /tmp/preview on line 24
 
 $obj2 = new StringModifier();
-$obj2->capitalize("outlaw");  // OUTLAW
-$obj2->lowercase("TURMERIC"); // turmetic
+$obj2->capitalize("outlaw");  // Output: OUTLAW
+$obj2->lowercase("TURMERIC"); // Output: turmeric
