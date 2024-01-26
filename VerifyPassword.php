@@ -1,3 +1,4 @@
+<?php
 $plainPassword = "plain password";
 
 // Hash password.
